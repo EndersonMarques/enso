@@ -14,11 +14,10 @@ int main()
 		if(i <= k) {
 			n++;
 		}
-		[COLOR="Red"]/*DS*/[/COLOR]
-		printf("%d %.4lf %.4lf\n", n, k, i);
+		//TESTANDO
+		//printf("%d %.4lf %.4lf\n", n, k, i);
 	}
 
 	printf("%d\n", n);
 
 }
-
