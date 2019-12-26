@@ -1,6 +1,5 @@
 #include <iostream> 
 #include <stdlib.h> 
-#include <stdio.h>
 using namespace std; 
 char palavra[30], letra[1]; string secreta[30]; 
 int i,k,acertos,tam,chances; 
