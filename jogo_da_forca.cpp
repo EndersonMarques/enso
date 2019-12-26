@@ -1,5 +1,6 @@
 #include <iostream> 
 #include <stdlib.h> 
+
 using namespace std; 
 char palavra[30], letra[1]; string secreta[30]; 
 int i,k,acertos,tam,chances; 
@@ -32,28 +33,30 @@ int main()
 		cout << endl; 
 		cout << "\n\nDigite uma letra: \n\n"; 
 		cin >> letra; 
-		system("clear"); 
 		for (i=0; i<tam; i++) 
 		{ 
 			if (palavra[i]==letra[0]) 
 				{
 					acerto = true;
-					acertos++; 
 					secreta[i]=letra[0];
+					acertos++; 
 				} 
 		}
 		if(!acerto)
 		{
 			chances--;
 		}
+		acerto = false;
+		system("clear");
+		
 	} 
 	if (chances==0 && acertos<tam) 
 	{ 
-		cout << " Voce perdeu..." << endl;
+		cout << " Voce perdeu..." << endl<<"Feito por... Enderson!!"<< endl;
 	} 
 	if (acertos==tam) 
 	{ 
-		cout << " Voce ganhou... parabens.." << endl;
+		cout << " Voce ganhou... parabens.." << endl<<"Feito por... Enderson!!"<< endl;
 	}
 	return 0; 
 }
