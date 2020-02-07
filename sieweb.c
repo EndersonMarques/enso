@@ -1,9 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#define RUN 1
+
+typedef struct
+{
+	char nome[50];
+	char Turma[50];
+}Alunos;
+Alunos aluno[10];
+
 void cadastrar_aluno()
 {
-	printf("cadastro");
+	int i, nome;
+	FILE *cadastro;
+	cadastro = fopen("cadastro_alunos.txt", "w");
+	getchar();
+	for(i=0;i<3;i++)
+	{
+		fgets(aluno[i].nome, 50, stdin);
+		fgets(aluno[i].Turma, 50, stdin);
+		fprintf(cadastro, "Nome: %s", aluno[i].nome);
+		fprintf(cadastro, "Turma: %s", aluno[i].Turma);
+	}
+	fclose(cadastro);
 }
 void excluir_aluno()
 {
@@ -15,7 +35,9 @@ void editar_aluno()
 }
 void listar_aluno()
 {
-	printf("cadastro");
+	FILE *abrir;
+	fopen("cadastro_alunos.txt", "r");
+	getchar();
 }
 void cadastrar_turma()
 {
@@ -60,6 +82,7 @@ int main()
 		if(menu == 1)
 		{
 			cadastrar_aluno();
+			break;
 		}
 		else if(menu == 2)
 		{
@@ -72,6 +95,7 @@ int main()
 		else if(menu == 4)
 		{
 			listar_aluno();
+			break;
 		}
 		else if(menu == 5)
 		{
@@ -96,5 +120,4 @@ int main()
 	}
 
 	return 0;
-
 }
